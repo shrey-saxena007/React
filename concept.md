@@ -184,5 +184,7 @@ We can instead use Context API, Custom Hooks, Global State Management(Redux)
 
 ---
 
-
+Skipped these two articles-:
+- [Context API](https://www.geeksforgeeks.org/reactjs/explain-new-context-api-in-react/)
+- [React Redux](https://www.geeksforgeeks.org/web-tech/introduction-to-react-redux/)
 
