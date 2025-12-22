@@ -77,3 +77,64 @@ React Hooks let developers use state, side effects, and other React features wit
   
   export default Form;
   ```
+
+  ---
+
+  ### useEffect Hook
+  
+```
+  useEffect(() => {
+    // Code to run on each render
+    return () => {
+        // Cleanup function (optional)
+    };
+}, [dependencies]);
+```
+- Effect function: This is where your side effect code runs.
+- Cleanup function: This optional return function cleans up side effects like subscriptions or timers when the component unmounts.
+- Dependencies array: React re-runs the effect if any of the values in this array change
+
+- How it works-:
+1. Initial Render Happens: React renders the component and updates the DOM.
+2. useEffect Executes After Render: It runs after the paint, not during render.
+3. Dependencies Are Checked: If there is no dependency array, the effect runs after every render; if the array is empty ([]), it runs once on mount; if dependencies are provided, it runs only when those values change.
+4. Cleanup Function Runs: Before the effect re-runs or the component unmounts, the cleanup function (returned from useEffect) is executed.
+5. Effect Re-runs: If dependencies changed, the effect runs again—after cleanup.
+
+  ```js
+  //HookCounterOne.js
+  
+  // useEffect is defined here
+  
+  import { useState, useEffect } from "react";
+  
+  function HookCounterOne() {
+      const [count, setCount] = useState(0);
+  
+      useEffect(() => {
+          document.title = `You clicked ${count} times`;
+      }, [count]);
+  
+      return (
+          <div>
+              <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+                  Click {count} times
+              </button>
+          </div>
+      );
+  }
+  export default HookCounterOne;
+  ```
+
+- useEffect triggers a function on every component render, using React to execute specified tasks efficiently.
+- Positioned within the component, it grants easy access to state and props without additional coding.
+- To run useEffect on every render do not pass any dependency
+- To run useEffect only once on the first render pass any empty array in the dependency
+- To run useEffect on change of a particular value. Pass the state and props in the dependency array
+
+---
+
+
+
+
+
