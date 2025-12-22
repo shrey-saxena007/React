@@ -21,7 +21,7 @@ React Hooks let developers use state, side effects, and other React features wit
 
 3. State Updates with the Updater Function: When you call setCount(newValue) React updates the state and it re-renders the component to reflect the new state value.
 
-<button onClick={() => setCount(count + 1)}>Increment</button>
+``` <button onClick={() => setCount(count + 1)}>Increment</button> ```  
 4. Triggers Re-render: React will re-render only the component where useState was used—ensuring your UI updates automatically when the state changes.
 
 - Example of counter using useState
