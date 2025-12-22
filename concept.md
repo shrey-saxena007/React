@@ -173,8 +173,16 @@ Practical Condition Rendering
 - The component initially renders "Loading...", and once the state updates, it re-renders to display "Fetched Data".
 
 
+---
 
+PropType is used to provide type safety, just like typescript does in js
 
 ---
+
+Prop drilling refers to the practice of passing data through several layers of nested components in React, even though intermediate components don't directly utilize this data. This means that a middle component doesn't necessarily need the data, but it must still pass it down to the next component, creating an unnecessary and sometimes lengthy chain of props.
+We can instead use Context API, Custom Hooks, Global State Management(Redux)
+
+---
+
 
 
