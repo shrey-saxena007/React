@@ -110,24 +110,24 @@ Practical Condition Rendering
    You can conditionally render a user’s profile page if the user is logged in, or a login form if not.
     ```js
     import React, { useState } from 'react';
-
-function App() {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-    return (
-        <div>
-            {isAuthenticated ? (
-                <h1>User Profile</h1>
-            ) : (
-                <button onClick={() => 
-                    setIsAuthenticated(true)}>Log In</button>
-            )}
-        </div>
-    );
-}
-
-export default App;
-    ```
+    
+    function App() {
+        const [isAuthenticated, setIsAuthenticated] = useState(false);
+    
+        return (
+            <div>
+                {isAuthenticated ? (
+                    <h1>User Profile</h1>
+                ) : (
+                    <button onClick={() => 
+                        setIsAuthenticated(true)}>Log In</button>
+                )}
+            </div>
+        );
+    }
+    
+    export default App;
+   ```
 
 - The component uses useState to manage the isAuthenticated state, which is initially set to false.
 - The isAuthenticated state determines what is rendered: if false, a "Log In" button is displayed; if true, a "User Profile" heading appears.
@@ -138,33 +138,33 @@ export default App;
 2. Showing Loading State
    You can display a loading spinner or message while waiting for data to be fetched.
 
-   ```js
-   import React, { useState, useEffect } from 'react';
-
-function App() {
-    const [isLoading, setIsLoading] = useState(true);
-    const [data, setData] = useState(null);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setData('Fetched Data');
-            setIsLoading(false);
-        }, 2000);
-    }, []);
-
-    return (
-        <div>
-            {isLoading ? (
-                <h1>Loading...</h1>
-            ) : (
-                <h1>{data}</h1>
-            )}
-        </div>
-    );
-}
-
-export default App;
-```
+    ```js
+    import React, { useState, useEffect } from 'react';
+    
+    function App() {
+        const [isLoading, setIsLoading] = useState(true);
+        const [data, setData] = useState(null);
+    
+        useEffect(() => {
+            setTimeout(() => {
+                setData('Fetched Data');
+                setIsLoading(false);
+            }, 2000);
+        }, []);
+    
+        return (
+            <div>
+                {isLoading ? (
+                    <h1>Loading...</h1>
+                ) : (
+                    <h1>{data}</h1>
+                )}
+            </div>
+        );
+    }
+    
+    export default App;
+    ```
 
 
 - The component uses useState to manage two state variables: isLoading (initially true) and data (initially null).
