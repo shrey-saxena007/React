@@ -52,3 +52,50 @@ class Greet extends React.Component {
   }
 }
 ```
+
+---
+### Props in React Components
+
+Props (short for properties) are read-only inputs passed from a parent component to a child component. They enable dynamic data flow and reusability.
+
+- Props are immutable.
+- They enable communication between components.
+
+```js
+function Greet(props) {
+    return <h2>Welcome, {props.username}!</h2>;
+}
+
+// Usage
+<Greet username="Anil" />;
+```
+
+---
+
+### State in React Components
+The state is a JavaScript object managed within a component, allowing it to maintain and update its own data over time. Unlike props, state is mutable and controlled entirely by the component.
+
+- State updates trigger re-renders.
+- Functional components use the useState hook to manage state.
+
+```js
+
+function Counter() {
+    const [count, setCount] = React.useState(0);
+
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={() => 
+                setCount(count + 1)}>Increment</button>
+        </div>
+    );
+}
+
+```
+
+---
+
+In React, you can nest components inside other components to build a modular and hierarchical structure.
+
+---
